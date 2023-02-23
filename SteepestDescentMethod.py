@@ -2,6 +2,7 @@
 
 from math import sqrt
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 # Define a quadratic, multivariable objective function
@@ -23,17 +24,25 @@ def norm_gradient(x):
 x = np.array([-1, 4]) # initial value of x
 stop_accuracy = 0.01
 t = 1 # self-defined step = 1
-iteration = 0
+iteration = 1
 
-while norm_gradient(g(x)) > stop_accuracy:
+gradient_norm = [norm_gradient(g(x))]
+iterations = [iteration]
+
+while norm_gradient(g(x)) >= stop_accuracy:
     d = -g(x)
     df = f(x + t * d)
     if df <= f(x):
+        print(f'Step: {iteration} | x: {x} | Gradient: {g(x)} | Gradient length: {norm_gradient(g(x))} | t: {t} ')
         gradient = g(x + t * d)
         d = -g(x)
         x = x + t * d
         iteration += 1
-        print(f'Step: {iteration} | x: {x} | Gradient: {gradient} | Gradient length: {norm_gradient(g(x))} | t: {t} ')
+        iterations.append(iteration)
+        gradient_norm.append(norm_gradient(g(x)))
     else:
         t = t / 2
         continue
+
+plt.plot(iterations, gradient_norm)
+plt.show()
