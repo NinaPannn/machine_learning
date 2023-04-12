@@ -6,10 +6,19 @@
 ### Supervised Machine Learning with scikit-learn
 Includes model selection with different hyparameters, model measuring with accuray or score, model     visualization with matplotlib 
 
-- Classfication
-- Regression
-  Linear regression-OLS
-  Ridge regression-regularized regression
-  Lasso regression-regularized regression
+- What I have learned?
+  - Using supervised learning techniques to build predictive models
+  - For both regression and classification problems
+  - Underfitting and overfitting
+  - How to split data
+  - Perform cross-validation
+
+- What I have covered?
+
+  -Data preprocessing techniques
+  - Model selection
+  - Hyperparameter tuning
+  - Model performance evaluation
+  - Using pipelines
 
   
